@@ -20,7 +20,7 @@ Resources:
         Assessments:
           Type: Api
           Properties:
-            Path: /assessments/
+            Path: /assessments/{key}
             Method: get
 
 Outputs:
