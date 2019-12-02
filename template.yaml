@@ -17,11 +17,16 @@ Resources:
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
       Events:
-        Assessments:
+        GetAssessment:
           Type: Api
           Properties:
             Path: /assessments/{key}
             Method: get
+        SaveAssessment:
+          Type: Api
+          Properties:
+            Path: /assessments/{key}
+            Method: post
 
 Outputs:
   AssessmentsApi:
