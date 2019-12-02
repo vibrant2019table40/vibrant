@@ -18,12 +18,26 @@ Globals:
     Timeout: 30
 
 Resources:
+
+  DynamoDBPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: !Sub '${AWS::StackName}-DynamoDBPolicy'
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action: ['dynamodb:GetItem', 'dynamodb:PutItem']
+            Resource: !Join ['', ['arn:aws:dynamodb:', !Ref DynamoDBRegion, ':', !Ref 'AWS::AccountId', ':table/', !Ref DynamoDBTable]]
+
   AssessmentsFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: assessments/
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
+      Policies:
+        - !Ref DynamoDBPolicy
       Environment:
         Variables:
           DynamoDBRegion: !Ref DynamoDBRegion
