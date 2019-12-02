@@ -5,6 +5,14 @@ Description: >
 
   Sample SAM Template for vibrant-backend
 
+Parameters:
+  DynamoDBRegion:
+    Type: String
+    Default: us-east-1
+  DynamoDBTable:
+    Type: String
+    Default: vibrant-db
+
 Globals:
   Function:
     Timeout: 30
@@ -16,6 +24,10 @@ Resources:
       CodeUri: assessments/
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
+      Environment:
+        Variables:
+          DynamoDBRegion: !Ref DynamoDBRegion
+          DynamoDBTable: !Ref DynamoDBTable
       Events:
         GetAssessment:
           Type: Api

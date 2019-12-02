@@ -1,10 +1,13 @@
 let response;
 
+const dbRegion = process.env.DynamoDBRegion;
+const dbTable = process.env.DynamoDBTable;
+
 // Load the AWS SDK for Node.js
 var AWS = require('aws-sdk');
 
 // Set the region
-AWS.config.update({ region: 'us-east-1' });
+AWS.config.update({ region: dbRegion });
 
 // Create DynamoDB document client
 var docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
@@ -63,7 +66,7 @@ const getItem = async key => {
     throw new ApiError(400, `Key is required`);
   }
   var params = {
-    TableName: 'vibrant-db',
+    TableName: dbTable,
     Key: { CallerKey: key }
   };
   const data = await docClient.get(params).promise();
@@ -81,7 +84,7 @@ const saveItem = async (key, data) => {
     throw new ApiError(400, `Body is required`);
   }
   var params = {
-    TableName: 'vibrant-db',
+    TableName: dbTable,
     Item: {
       CallerKey: key,
       Data: data
