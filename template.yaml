@@ -30,11 +30,5 @@ Resources:
 
 Outputs:
   AssessmentsApi:
-    Description: 'API Gateway endpoint URL for Prod stage for assessments function'
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/assessments/'
-  AssessmentsFunction:
-    Description: 'Assessments Lambda Function ARN'
-    Value: !GetAtt AssessmentsFunction.Arn
-  AssessmentsFunctionIamRole:
-    Description: 'Implicit IAM Role created for assessments function'
-    Value: !GetAtt AssessmentsFunctionRole.Arn
+    Description: 'API Gateway endpoint URL for Prod stage'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/'
