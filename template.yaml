@@ -52,7 +52,7 @@ Resources:
           Type: Api
           Properties:
             Path: /caseplans/{key}
-            Path: /assessments/{key}
+            Method: post
 
   ShareFunction:
     Type: AWS::Serverless::Function
