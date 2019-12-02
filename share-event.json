@@ -1,0 +1,109 @@
+{
+    "resource": "/share",
+    "path": "/share/",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "CloudFront-Forwarded-Proto": "https",
+        "CloudFront-Is-Desktop-Viewer": "true",
+        "CloudFront-Is-Mobile-Viewer": "false",
+        "CloudFront-Is-SmartTV-Viewer": "false",
+        "CloudFront-Is-Tablet-Viewer": "false",
+        "CloudFront-Viewer-Country": "US",
+        "content-type": "application/json",
+        "Host": "aleaujvp3b.execute-api.us-east-1.amazonaws.com",
+        "User-Agent": "insomnia/7.0.3",
+        "Via": "2.0 917b3b43595bd7516933b3ba6caf51ee.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "WsbBpHukWI1DDYmDgl9S9CKj_Il-4eOjjJKCf13I4IIEztV7Q7KkwA==",
+        "X-Amzn-Trace-Id": "Root=1-5de58b57-f57aab60baeae6a044ee7bb0",
+        "X-Forwarded-For": "208.78.232.45, 70.132.22.134",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "CloudFront-Forwarded-Proto": [
+            "https"
+        ],
+        "CloudFront-Is-Desktop-Viewer": [
+            "true"
+        ],
+        "CloudFront-Is-Mobile-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-SmartTV-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-Tablet-Viewer": [
+            "false"
+        ],
+        "CloudFront-Viewer-Country": [
+            "US"
+        ],
+        "content-type": [
+            "application/json"
+        ],
+        "Host": [
+            "aleaujvp3b.execute-api.us-east-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "insomnia/7.0.3"
+        ],
+        "Via": [
+            "2.0 917b3b43595bd7516933b3ba6caf51ee.cloudfront.net (CloudFront)"
+        ],
+        "X-Amz-Cf-Id": [
+            "WsbBpHukWI1DDYmDgl9S9CKj_Il-4eOjjJKCf13I4IIEztV7Q7KkwA=="
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-5de58b57-f57aab60baeae6a044ee7bb0"
+        ],
+        "X-Forwarded-For": [
+            "208.78.232.45, 70.132.22.134"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "q5ploq",
+        "resourcePath": "/share",
+        "httpMethod": "POST",
+        "extendedRequestId": "EGK1rHGMIAMFbpw=",
+        "requestTime": "02/Dec/2019:22:08:23 +0000",
+        "path": "/Prod/share/",
+        "accountId": "634717624045",
+        "protocol": "HTTP/1.1",
+        "stage": "Prod",
+        "domainPrefix": "aleaujvp3b",
+        "requestTimeEpoch": 1575324503453,
+        "requestId": "35395862-381b-450f-a76f-e51c519d4b3d",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "208.78.232.45",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "insomnia/7.0.3",
+            "user": null
+        },
+        "domainName": "aleaujvp3b.execute-api.us-east-1.amazonaws.com",
+        "apiId": "aleaujvp3b"
+    },
+    "body": "{\n\t\"email\": \"gabnic@gmail.com\",\n\t\"code\": \"ABC123\"\n}",
+    "isBase64Encoded": false
+}

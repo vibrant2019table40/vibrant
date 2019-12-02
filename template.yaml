@@ -52,6 +52,24 @@ Resources:
           Type: Api
           Properties:
             Path: /caseplans/{key}
+            Path: /assessments/{key}
+
+  ShareFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: assessments/
+      Handler: share.shareHandler
+      Runtime: nodejs12.x
+      Policies:
+        - arn:aws:iam::aws:policy/AmazonSESFullAccess
+      Environment:
+        Variables:
+          PlanUrl: https://vibrant-table40.com/plan/
+      Events:
+        Assessments:
+          Type: Api
+          Properties:
+            Path: /share/
             Method: post
 
 Outputs:
