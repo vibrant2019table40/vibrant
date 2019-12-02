@@ -1,7 +1,7 @@
 {
-  "name": "vibrant-assessments",
+  "name": "vibrant-caseplans",
   "version": "1.0.0",
-  "description": "processes assessments",
+  "description": "processes caseplans",
   "main": "app.js",
   "author": "SAM CLI",
   "license": "MIT",

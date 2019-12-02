@@ -1,7 +1,7 @@
 {
   "body": "{\"message\": \"hello world\"}",
-  "resource": "/assessments/{key}",
-  "path": "/assessments/some",
+  "resource": "/caseplans/{key}",
+  "path": "/caseplans/some",
   "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {

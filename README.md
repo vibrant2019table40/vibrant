@@ -14,7 +14,7 @@ AWS NPO Hackathon 2019 - Table 40
 **Invoking function locally using a local sample payload**
 
 ```bash
-sam local invoke AssessmentsFunction --event event.json
+sam local invoke CasePlansFunction --event event.json
 ```
 
 **Invoking function locally through local API Gateway**
@@ -43,10 +43,10 @@ AWS Lambda NodeJS runtime requires a flat folder with all dependencies including
 
 ```yaml
 ...
-    AssessmentsFunction:
+    CasePlansFunction:
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: get-assessment/
+            CodeUri: get-caseplan/
             ...
 ```
 
@@ -91,7 +91,7 @@ To simplify troubleshooting, SAM CLI has a command called sam logs. sam logs let
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-sam logs -n AssessmentsFunction --stack-name vibrant-backend --tail
+sam logs -n CasePlansFunction --stack-name vibrant-backend --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -122,7 +122,7 @@ Here are a few things you can try to get more acquainted with building serverles
 
 * Uncomment lines on `app.js`
 * Build the project with ``sam build --use-container``
-* Invoke with ``sam local invoke AssessmentsFunction --event event.json``
+* Invoke with ``sam local invoke CasePlansFunction --event event.json``
 * Update tests
 
 ### Create an additional API resource
@@ -160,7 +160,7 @@ All commands used throughout this document
 
 ```bash
 # Invoke function locally with event.json as an input
-sam local invoke AssessmentsFunction --event event.json
+sam local invoke CasePlansFunction --event event.json
 
 # Run API Gateway locally
 sam local start-api
@@ -186,7 +186,7 @@ aws cloudformation describe-stacks \
     --output table
 
 # Tail Lambda function Logs using Logical name defined in SAM Template
-sam logs -n AssessmentsFunction --stack-name vibrant-backend --tail
+sam logs -n CasePlansFunction --stack-name vibrant-backend --tail
 ```
 
 **NOTE**: Alternatively this could be part of package.json scripts section.

@@ -30,10 +30,10 @@ Resources:
             Action: ['dynamodb:GetItem', 'dynamodb:PutItem']
             Resource: !Join ['', ['arn:aws:dynamodb:', !Ref DynamoDBRegion, ':', !Ref 'AWS::AccountId', ':table/', !Ref DynamoDBTable]]
 
-  AssessmentsFunction:
+  CasePlansFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: assessments/
+      CodeUri: caseplans/
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
       Policies:
@@ -43,18 +43,18 @@ Resources:
           DynamoDBRegion: !Ref DynamoDBRegion
           DynamoDBTable: !Ref DynamoDBTable
       Events:
-        GetAssessment:
+        GetCasePlan:
           Type: Api
           Properties:
-            Path: /assessments/{key}
+            Path: /caseplans/{key}
             Method: get
-        SaveAssessment:
+        SaveCasePlan:
           Type: Api
           Properties:
-            Path: /assessments/{key}
+            Path: /caseplans/{key}
             Method: post
 
 Outputs:
-  AssessmentsApi:
+  CasePlansApi:
     Description: 'API Gateway endpoint URL for Prod stage'
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/'

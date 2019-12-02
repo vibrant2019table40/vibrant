@@ -1,0 +1,21 @@
+APIs:
+
+
+Get caseplan by id:
+- method: Get
+- url: https://aleaujvp3b.execute-api.us-east-1.amazonaws.com/Prod/caseplans/{KEY}
+
+e.g.
+```
+http get https://aleaujvp3b.execute-api.us-east-1.amazonaws.com/Prod/caseplans/some
+```
+
+Save caseplan:
+- method: POST
+- url: https://aleaujvp3b.execute-api.us-east-1.amazonaws.com/Prod/caseplans/{KEY}
+- body: data JSON
+
+e.g.
+```
+http post https://aleaujvp3b.execute-api.us-east-1.amazonaws.com/Prod/caseplans/some some=value other=value
+```

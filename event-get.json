@@ -1,6 +1,6 @@
 {
-  "resource": "/assessments/{key}",
-  "path": "/assessments/some",
+  "resource": "/caseplans/{key}",
+  "path": "/caseplans/some",
   "httpMethod": "GET",
   "pathParameters": {
     "key": "some"
