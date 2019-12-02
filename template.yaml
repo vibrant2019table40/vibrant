@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  vibrant-backend
+
+  Sample SAM Template for vibrant-backend
+
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  AssessmentsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: assessments/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        Assessments:
+          Type: Api
+          Properties:
+            Path: /assessments/
+            Method: get
+
+Outputs:
+  AssessmentsApi:
+    Description: "API Gateway endpoint URL for Prod stage for assessments function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/assessments/"
+  AssessmentsFunction:
+    Description: "Assessments Lambda Function ARN"
+    Value: !GetAtt AssessmentsFunction.Arn
+  AssessmentsFunctionIamRole:
+    Description: "Implicit IAM Role created for assessments function"
+    Value: !GetAtt AssessmentsFunctionRole.Arn
