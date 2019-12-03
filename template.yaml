@@ -71,7 +71,7 @@ Resources:
         - arn:aws:iam::aws:policy/AmazonSESFullAccess
       Environment:
         Variables:
-          PlanUrl: https://vibrant-table40.com/caseplans/
+          PlanUrl: https://vibrant-table40.com/
       Events:
         Share:
           Type: Api
