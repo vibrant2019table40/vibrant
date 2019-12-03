@@ -35,6 +35,8 @@ exports.lambdaHandler = async (event, context) => {
   try {
     let data = null;
 
+    console.log(`${event.httpMethod} ${event.path}`);
+
     switch (event.httpMethod) {
       case 'GET':
         data = await getItem(event.pathParameters.key);
@@ -63,6 +65,8 @@ exports.lambdaHandler = async (event, context) => {
       }
     };
   }
+
+  console.log(JSON.stringify(response));
 
   return response;
 };
