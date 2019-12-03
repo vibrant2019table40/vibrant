@@ -1,6 +1,6 @@
 #!/bin/bash
 
-table=$1
+table=$1 # vibrant-db
 
 aws --profile vibrant dynamodb describe-table --table-name "${table}"
 
