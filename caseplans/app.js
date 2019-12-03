@@ -13,9 +13,9 @@ AWS.config.update({ region: dbRegion });
 var docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', convertEmptyValues: true });
 
 class ApiError extends Error {
-  constructor(code, message) {
+  constructor(statusCode, message) {
     super(message);
-    this.code = code;
+    this.statusCode = statusCode;
   }
 }
 
@@ -54,9 +54,9 @@ exports.lambdaHandler = async (event, context) => {
       }
     };
   } catch (err) {
-    console.log(`ERROR: code=${err.code} ${err}`);
+    console.log(`ERROR: code=${err.statusCode} ${err}`);
     response = {
-      statusCode: err.code || 500,
+      statusCode: err.statusCode || 500,
       body: JSON.stringify({ message: err.message }),
       headers: {
         "Access-Control-Allow-Origin": "*"
