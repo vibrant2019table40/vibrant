@@ -66,7 +66,11 @@ exports.shareHandler = async (event, context) => {
             'body': JSON.stringify({
                 email,
                 code,
-            })
+            },
+            'headers': {
+                "Access-Control-Allow-Origin": "*"
+            }
+            )
         }
     } catch (err) {
         console.log(err);

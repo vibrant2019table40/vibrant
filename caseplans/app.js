@@ -48,13 +48,19 @@ exports.lambdaHandler = async (event, context) => {
 
     response = {
       statusCode: 200,
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
     };
   } catch (err) {
     console.log(`ERROR: code=${err.code} ${err}`);
     response = {
       statusCode: err.code || 500,
-      body: JSON.stringify({ message: err.message })
+      body: JSON.stringify({ message: err.message }),
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
     };
   }
 
