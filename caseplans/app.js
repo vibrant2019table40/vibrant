@@ -73,7 +73,7 @@ const getItem = async key => {
   if (!data.Item) {
     throw new ApiError(404, `Key not found: ${key}`);
   }
-  return data.Item;
+  return data.Item.Data;
 };
 
 const saveItem = async (key, data) => {
