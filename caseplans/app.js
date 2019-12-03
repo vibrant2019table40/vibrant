@@ -10,7 +10,7 @@ var AWS = require('aws-sdk');
 AWS.config.update({ region: dbRegion });
 
 // Create DynamoDB document client
-var docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
+var docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10', convertEmptyValues: true });
 
 class ApiError extends Error {
   constructor(code, message) {
